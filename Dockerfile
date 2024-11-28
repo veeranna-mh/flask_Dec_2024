@@ -1,12 +1,14 @@
 FROM python:3.11-slim
 WORKDIR /flask-docker
 RUN python -m pip install --upgrade pip
+
 RUN apt-get update && apt-get install -y \
     build-essential \
+    libatlas-base-dev \
     gfortran \
-    libopenblas-dev \
-    liblapack-dev \
     && apt-get clean
+    
+
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
