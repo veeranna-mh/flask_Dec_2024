@@ -1,4 +1,4 @@
-FROM python:3.9-slim  # Use python:3.10-slim if upgrading for scipy 1.14.1 compatibility
+FROM python:3.9-slim 
 WORKDIR /flask-docker
 RUN apt-get update && apt-get install -y \
     build-essential \
